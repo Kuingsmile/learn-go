@@ -1,0 +1,12 @@
+# .air.toml
+# 监听的文件类型
+include = ["*.go", "*.tpl", "*.html"]
+
+# 忽略的文件或目录
+exclude_dir = ["assets", "tmp", "vendor"]
+
+# 构建命令
+build = "go build -o ./tmp/main ."
+
+# 运行命令
+run = "./tmp/main"

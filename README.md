@@ -1,2 +1,0 @@
-# learn-go
-learning go
