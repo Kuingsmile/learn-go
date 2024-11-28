@@ -35,3 +35,16 @@ func GenerateToken(appKey, appSecret string) (string, error) {
 }
 
 func ParseToken(tokenString string) (*Claims, error) {
+	token, err := jwt.ParseWithClaims(tokenString, &Claims{}, func(token *jwt.Token) (interface{}, error) {
+		return GetJWTSecret(), nil
+	})
+	if err != nil {
+		return nil, err
+	}
+	if token != nil {
+		if claims, ok := token.Claims.(*Claims); ok && token.Valid {
+			return claims, nil
+		}
+	}
+	return nil, err
+}
