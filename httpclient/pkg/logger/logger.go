@@ -1,9 +1,11 @@
 package logger
 
 import (
+	"context"
 	"os"
 	"path/filepath"
 
+	"github.com/gin-gonic/gin"
 	"github.com/sirupsen/logrus"
 )
 
@@ -11,39 +13,11 @@ type Level int8
 
 type Fields map[string]interface{}
 
-const (
-	LogLevelDebug Level = iota
-	LogLevelInfo
-	LogLevelWarn
-	LogLevelError
-	LogLevelFatal
-	LogLevelPanic
-)
-
-func (l Level) String() string {
-	switch l {
-	case LogLevelDebug:
-		return "debug"
-	case LogLevelInfo:
-		return "info"
-	case LogLevelWarn:
-		return "warn"
-	case LogLevelError:
-		return "error"
-	case LogLevelFatal:
-		return "fatal"
-	case LogLevelPanic:
-		return "panic"
-	}
-	return ""
-}
-
 type Logger struct {
-	logger *logrus.Logger
-	file   *os.File
+	*logrus.Entry
 }
 
-func NewLogger(level Level, filePath string) (*Logger, error) {
+func NewLogger(level logrus.Level, filePath string) (*Logger, error) {
 	absPath, err := filepath.Abs(filePath)
 	if err != nil {
 		return nil, err
@@ -63,77 +37,89 @@ func NewLogger(level Level, filePath string) (*Logger, error) {
 	log.SetFormatter(&logrus.TextFormatter{
 		FullTimestamp: true,
 	})
-	log.SetLevel(convertLevel(level))
-	return &Logger{logger: log, file: file}, nil
+	log.SetLevel(level)
+	log.SetFormatter(&MyLoggerFormatter{})
+	return &Logger{Entry: log.WithFields(logrus.Fields{})}, nil
 }
 
-func convertLevel(level Level) logrus.Level {
+func (l *Logger) WithFields(fields Fields) *Logger {
+	return &Logger{Entry: l.Entry.WithFields(logrus.Fields(fields))}
+}
+
+func (l *Logger) WithTrace(ctx context.Context) *Logger {
+	ginCtx, ok := ctx.(*gin.Context)
+
+	if ok {
+		return l.WithFields(Fields{
+			"trace_id": ginCtx.GetString("X-Trace-ID"),
+			"span_id":  ginCtx.GetString("X-Span-ID"),
+		})
+	}
+	return l
+}
+
+func (l *Logger) logWithContext(ctx context.Context, level logrus.Level, msg string, args ...interface{}) {
+	entry := l.WithTrace(ctx).Entry
 	switch level {
-	case LogLevelDebug:
-		return logrus.DebugLevel
-	case LogLevelInfo:
-		return logrus.InfoLevel
-	case LogLevelWarn:
-		return logrus.WarnLevel
-	case LogLevelError:
-		return logrus.ErrorLevel
-	case LogLevelFatal:
-		return logrus.FatalLevel
-	case LogLevelPanic:
-		return logrus.PanicLevel
-	default:
-		return logrus.InfoLevel
+	case logrus.DebugLevel:
+		entry.Debugf(msg, args...)
+	case logrus.InfoLevel:
+		entry.Infof(msg, args...)
+	case logrus.WarnLevel:
+		entry.Warnf(msg, args...)
+	case logrus.ErrorLevel:
+		entry.Errorf(msg, args...)
+	case logrus.FatalLevel:
+		entry.Fatalf(msg, args...)
+	case logrus.PanicLevel:
+		entry.Panicf(msg, args...)
 	}
 }
 
-func (l *Logger) WithFields(fields Fields) *logrus.Entry {
-	return l.logger.WithFields(logrus.Fields(fields))
+func (l *Logger) Debug(ctx context.Context, msg string) {
+	l.logWithContext(ctx, logrus.DebugLevel, msg)
 }
 
-func (l *Logger) Debug(msg string) {
-	l.logger.Debug(msg)
+func (l *Logger) Debugf(ctx context.Context, format string, args ...interface{}) {
+	l.logWithContext(ctx, logrus.DebugLevel, format, args...)
 }
 
-func (l *Logger) Debugf(format string, args ...interface{}) {
-	l.logger.Debugf(format, args...)
+func (l *Logger) Info(ctx context.Context, msg string) {
+	l.logWithContext(ctx, logrus.InfoLevel, msg)
 }
 
-func (l *Logger) Info(msg string) {
-	l.logger.Info(msg)
+func (l *Logger) Infof(ctx context.Context, format string, args ...interface{}) {
+	l.logWithContext(ctx, logrus.InfoLevel, format, args...)
 }
 
-func (l *Logger) Infof(format string, args ...interface{}) {
-	l.logger.Infof(format, args...)
+func (l *Logger) Warn(ctx context.Context, msg string) {
+	l.logWithContext(ctx, logrus.WarnLevel, msg)
 }
 
-func (l *Logger) Warn(msg string) {
-	l.logger.Warn(msg)
+func (l *Logger) Warnf(ctx context.Context, format string, args ...interface{}) {
+	l.logWithContext(ctx, logrus.WarnLevel, format, args...)
 }
 
-func (l *Logger) Warnf(format string, args ...interface{}) {
-	l.logger.Warnf(format, args...)
+func (l *Logger) Error(ctx context.Context, msg string) {
+	l.logWithContext(ctx, logrus.ErrorLevel, msg)
 }
 
-func (l *Logger) Error(msg string) {
-	l.logger.Error(msg)
+func (l *Logger) Errorf(ctx context.Context, format string, args ...interface{}) {
+	l.logWithContext(ctx, logrus.ErrorLevel, format, args...)
 }
 
-func (l *Logger) Errorf(format string, args ...interface{}) {
-	l.logger.Errorf(format, args...)
+func (l *Logger) Fatal(ctx context.Context, msg string) {
+	l.logWithContext(ctx, logrus.FatalLevel, msg)
 }
 
-func (l *Logger) Fatal(msg string) {
-	l.logger.Fatal(msg)
+func (l *Logger) Fatalf(ctx context.Context, format string, args ...interface{}) {
+	l.logWithContext(ctx, logrus.FatalLevel, format, args...)
 }
 
-func (l *Logger) Fatalf(format string, args ...interface{}) {
-	l.logger.Fatalf(format, args...)
+func (l *Logger) Panic(ctx context.Context, msg string) {
+	l.logWithContext(ctx, logrus.PanicLevel, msg)
 }
 
-func (l *Logger) Panic(msg string) {
-	l.logger.Panic(msg)
-}
-
-func (l *Logger) Panicf(format string, args ...interface{}) {
-	l.logger.Panicf(format, args...)
+func (l *Logger) Panicf(ctx context.Context, format string, args ...interface{}) {
+	l.logWithContext(ctx, logrus.PanicLevel, format, args...)
 }

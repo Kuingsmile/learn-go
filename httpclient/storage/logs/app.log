@@ -54,3 +54,170 @@ time="2024-11-27T16:58:00+08:00" level=info msg="main.main: go HTTP server start
 time="2024-11-27T16:58:12+08:00" level=info msg="main.main: go HTTP server start"
 time="2024-11-27T16:58:57+08:00" level=info msg="main.main: go HTTP server start"
 time="2024-11-27T16:59:20+08:00" level=info msg="main.main: go HTTP server start"
+time="2024-11-28T14:21:12+08:00" level=info msg="main.main: go HTTP server start"
+time="2024-11-28T14:21:24+08:00" level=info msg="access log: method: GET, status_code: 400, begin_time: 1732774884, end_time: 1732774884" request= response="{\"code\":10000001,\"msg\":\"参数错误\"}"
+time="2024-11-28T14:22:54+08:00" level=info msg="main.main: go HTTP server start"
+time="2024-11-28T14:23:00+08:00" level=info msg="access log: method: GET, status_code: 200, begin_time: 1732774980, end_time: 1732774980" request= response="{\"list\":[{\"id\":3,\"created_by\":\"msqqq\",\"modified_by\":\"\",\"created_at\":\"2024-11-27T10:44:12.7935263+08:00\",\"updated_at\":\"2024-11-27T10:44:12.7935263+08:00\",\"deleted_at\":null,\"name\":\"RRRR\",\"state\":1}],\"pager\":{\"page\":1,\"page_size\":10,\"total_rows\":1}}"
+time="2024-11-28T14:24:02+08:00" level=info msg="main.main: go HTTP server start"
+time="2024-11-28T14:24:27+08:00" level=info msg="main.main: go HTTP server start"
+time="2024-11-28T16:16:24+08:00" level=info msg="main.main: go HTTP server start"
+time="2024-11-28T16:16:45+08:00" level=info msg="access log: method: GET, status_code: 200, begin_time: 1732781805, end_time: 1732781805" request= response="{\"list\":[{\"id\":3,\"created_by\":\"msqqq\",\"modified_by\":\"\",\"created_at\":\"2024-11-27T10:44:12.7935263+08:00\",\"updated_at\":\"2024-11-27T10:44:12.7935263+08:00\",\"deleted_at\":null,\"name\":\"RRRR\",\"state\":1}],\"pager\":{\"page\":1,\"page_size\":10,\"total_rows\":1}}"
+time="2024-11-28T16:17:50+08:00" level=info msg="access log: method: GET, status_code: 200, begin_time: 1732781870, end_time: 1732781870" request= response="{\"list\":[{\"id\":3,\"created_by\":\"msqqq\",\"modified_by\":\"\",\"created_at\":\"2024-11-27T10:44:12.7935263+08:00\",\"updated_at\":\"2024-11-27T10:44:12.7935263+08:00\",\"deleted_at\":null,\"name\":\"RRRR\",\"state\":1}],\"pager\":{\"page\":1,\"page_size\":10,\"total_rows\":1}}"
+time="2024-11-28T16:20:38+08:00" level=info msg="main.main: go HTTP server start"
+time="2024-11-28T16:21:07+08:00" level=info msg="main.main: go HTTP server start"
+time="2024-11-28T16:21:31+08:00" level=info msg="main.main: go HTTP server start"
+time="2024-11-28T16:21:37+08:00" level=info msg="access log: method: GET, status_code: 200, begin_time: 1732782097, end_time: 1732782097" request= response="{\"list\":[{\"id\":3,\"created_by\":\"msqqq\",\"modified_by\":\"\",\"created_at\":\"2024-11-27T10:44:12.7935263+08:00\",\"updated_at\":\"2024-11-27T10:44:12.7935263+08:00\",\"deleted_at\":null,\"name\":\"RRRR\",\"state\":1}],\"pager\":{\"page\":1,\"page_size\":10,\"total_rows\":1}}"
+time="2024-11-28T16:28:59+08:00" level=info msg="access log: method: GET, status_code: 200, begin_time: 1732782539, end_time: 1732782539" request= response="{\"list\":[{\"id\":3,\"created_by\":\"msqqq\",\"modified_by\":\"\",\"created_at\":\"2024-11-27T10:44:12.7935263+08:00\",\"updated_at\":\"2024-11-27T10:44:12.7935263+08:00\",\"deleted_at\":null,\"name\":\"RRRR\",\"state\":1}],\"pager\":{\"page\":1,\"page_size\":10,\"total_rows\":1}}"
+time="2024-11-28T16:33:49+08:00" level=info msg="main.main: go HTTP server start"
+time="2024-11-28T16:33:52+08:00" level=info msg="access log: method: GET, status_code: 200, begin_time: 1732782832, end_time: 1732782832" request= response="{\"list\":[{\"id\":3,\"created_by\":\"msqqq\",\"modified_by\":\"\",\"created_at\":\"2024-11-27T10:44:12.7935263+08:00\",\"updated_at\":\"2024-11-27T10:44:12.7935263+08:00\",\"deleted_at\":null,\"name\":\"RRRR\",\"state\":1}],\"pager\":{\"page\":1,\"page_size\":10,\"total_rows\":1}}"
+time="2024-11-28T16:35:53+08:00" level=info msg="main.main: go HTTP server start"
+time="2024-11-28T16:35:59+08:00" level=info msg="access log: method: GET, status_code: 200, begin_time: 1732782959, end_time: 1732782959" request= response="{\"list\":[{\"id\":3,\"created_by\":\"msqqq\",\"modified_by\":\"\",\"created_at\":\"2024-11-27T10:44:12.7935263+08:00\",\"updated_at\":\"2024-11-27T10:44:12.7935263+08:00\",\"deleted_at\":null,\"name\":\"RRRR\",\"state\":1}],\"pager\":{\"page\":1,\"page_size\":10,\"total_rows\":1}}"
+time="2024-11-28T16:36:33+08:00" level=info msg="main.main: go HTTP server start"
+time="2024-11-28T16:36:45+08:00" level=info msg="access log: method: GET, status_code: 200, begin_time: 1732783005, end_time: 1732783005" request= response="{\"list\":[{\"id\":3,\"created_by\":\"msqqq\",\"modified_by\":\"\",\"created_at\":\"2024-11-27T10:44:12.7935263+08:00\",\"updated_at\":\"2024-11-27T10:44:12.7935263+08:00\",\"deleted_at\":null,\"name\":\"RRRR\",\"state\":1}],\"pager\":{\"page\":1,\"page_size\":10,\"total_rows\":1}}"
+time="2024-11-28T16:37:38+08:00" level=info msg="main.main: go HTTP server start"
+time="2024-11-28T16:38:02+08:00" level=info msg="main.main: go HTTP server start"
+time="2024-11-28T16:38:53+08:00" level=info msg="main.main: go HTTP server start"
+time="2024-11-28T16:39:01+08:00" level=info msg="access log: method: GET, status_code: 200, begin_time: 1732783141, end_time: 1732783141" request= response="{\"list\":[{\"id\":3,\"created_by\":\"msqqq\",\"modified_by\":\"\",\"created_at\":\"2024-11-27T10:44:12.7935263+08:00\",\"updated_at\":\"2024-11-27T10:44:12.7935263+08:00\",\"deleted_at\":null,\"name\":\"RRRR\",\"state\":1}],\"pager\":{\"page\":1,\"page_size\":10,\"total_rows\":1}}"
+time="2024-11-28T16:41:19+08:00" level=info msg="access log: method: GET, status_code: 404, begin_time: 1732783279, end_time: 1732783279" request= response=
+time="2024-11-28T16:58:32+08:00" level=info msg="main.main: go HTTP server start"
+time="2024-11-28T16:58:35+08:00" level=info msg="access log: method: GET, status_code: 404, begin_time: 1732784315, end_time: 1732784315" request= response=
+2024-11-28 17:51:58 info main.main: go HTTP server start
+{"level":"info","msg":"main.main: go HTTP server start","time":"2024-11-28 17:55:18"}
+{
+    "level": "info",
+    "msg": "main.main: go HTTP server start",
+    "time": "2024-11-28 18:01:39"
+}
+{
+    "level": "info",
+    "msg": "main.main: go HTTP server start",
+    "time": "2024-11-28 18:02:47"
+}
+{
+    "level": "info",
+    "msg": "access log: method: GET, status_code: 404, begin_time: 1732788173, end_time: 1732788173",
+    "time": "2024-11-28 18:02:53"
+}
+{
+    "level": "info",
+    "msg": "main.main: go HTTP server start",
+    "time": "2024-11-28 18:06:52"
+}
+{
+    "level": "info",
+    "msg": "access log: method: GET, status_code: 404, begin_time: 1732788421, end_time: 1732788421",
+    "time": "2024-11-28 18:07:01"
+}
+{
+    "level": "error",
+    "msg": "app.BindAndValid errs: AppSecret为必填字段,AppKey为必填字段",
+    "time": "2024-11-28 18:07:50"
+}
+{
+    "level": "info",
+    "msg": "access log: method: POST, status_code: 400, begin_time: 1732788470, end_time: 1732788470",
+    "time": "2024-11-28 18:07:50"
+}
+{
+    "level": "info",
+    "msg": "main.main: go HTTP server start",
+    "time": "2024-11-29 09:59:30"
+}
+{
+    "level": "info",
+    "msg": "access log: method: GET, status_code: 200, begin_time: 1732845841, end_time: 1732845841",
+    "time": "2024-11-29 10:04:01"
+}
+{
+    "level": "info",
+    "msg": "main.main: go HTTP server start",
+    "time": "2024-11-29 10:09:11"
+}
+{
+    "level": "info",
+    "msg": "access log: method: GET, status_code: 200, begin_time: 1732846154, end_time: 1732846154",
+    "time": "2024-11-29 10:09:14"
+}
+{
+    "level": "info",
+    "msg": "main.main: go HTTP server start",
+    "time": "2024-11-29 10:11:05"
+}
+{
+    "level": "info",
+    "msg": "access log: method: GET, status_code: 200, begin_time: 1732846266, end_time: 1732846266",
+    "time": "2024-11-29 10:11:06"
+}
+{
+    "level": "info",
+    "msg": "main.main: go HTTP server start",
+    "time": "2024-11-29 10:12:09"
+}
+{
+    "level": "info",
+    "msg": "access log: method: GET, status_code: 200, begin_time: 1732846331, end_time: 1732846331",
+    "time": "2024-11-29 10:12:11"
+}
+{
+    "level": "info",
+    "msg": "main.main: go HTTP server start",
+    "time": "2024-11-29 10:18:11"
+}
+{
+    "level": "info",
+    "msg": "access log: method: GET, status_code: 200, begin_time: 1732846699, end_time: 1732846699",
+    "time": "2024-11-29 10:18:19"
+}
+{
+    "level": "info",
+    "msg": "main.main: go HTTP server start",
+    "time": "2024-11-29 10:19:27"
+}
+{
+    "level": "info",
+    "msg": "access log: method: GET, status_code: 200, begin_time: 1732846774, end_time: 1732846774",
+    "time": "2024-11-29 10:19:34"
+}
+{
+    "level": "info",
+    "msg": "main.main: go HTTP server start",
+    "time": "2024-11-29 10:22:12"
+}
+{
+    "level": "info",
+    "msg": "main.main: go HTTP server start",
+    "time": "2024-11-29 10:22:20"
+}
+{
+    "level": "info",
+    "msg": "access log: method: GET, status_code: 200, begin_time: 1732846942, end_time: 1732846942",
+    "time": "2024-11-29 10:22:22"
+}
+{
+    "level": "info",
+    "msg": "main.main: go HTTP server start",
+    "time": "2024-11-29 10:31:38"
+}
+{
+    "level": "info",
+    "msg": "access log: method: GET, status_code: 200, begin_time: 1732847502, end_time: 1732847502",
+    "request": "",
+    "response": "{\"list\":[{\"id\":3,\"created_by\":\"msqqq\",\"modified_by\":\"\",\"created_at\":\"2024-11-27T10:44:12.7935263+08:00\",\"updated_at\":\"2024-11-27T10:44:12.7935263+08:00\",\"deleted_at\":null,\"name\":\"RRRR\",\"state\":1}],\"pager\":{\"page\":1,\"page_size\":10,\"total_rows\":1}}",
+    "span_id": "471b531152a3d994",
+    "time": "2024-11-29 10:31:42",
+    "trace_id": "471b531152a3d994"
+}
+{
+    "level": "info",
+    "msg": "main.main: go HTTP server start",
+    "time": "2024-11-29 10:43:02"
+}
+{
+    "level": "info",
+    "msg": "access log: method: GET, status_code: 200, begin_time: 1732848187, end_time: 1732848187",
+    "request": "",
+    "response": "{\"list\":[{\"id\":3,\"created_by\":\"msqqq\",\"modified_by\":\"\",\"created_at\":\"2024-11-27T10:44:12.7935263+08:00\",\"updated_at\":\"2024-11-27T10:44:12.7935263+08:00\",\"deleted_at\":null,\"name\":\"RRRR\",\"state\":1}],\"pager\":{\"page\":1,\"page_size\":10,\"total_rows\":1}}",
+    "span_id": "1950eca4414051e1",
+    "time": "2024-11-29 10:43:07",
+    "trace_id": "1950eca4414051e1"
+}

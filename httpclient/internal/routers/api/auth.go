@@ -1,6 +1,7 @@
 package api
 
 import (
+	"context"
 	"httpclient/global"
 	"httpclient/internal/service"
 	"httpclient/pkg/app"
@@ -14,21 +15,21 @@ func GetAuth(c *gin.Context) {
 	response := app.NewResponse(c)
 	valid, errs := app.BindAndValid(c, &param)
 	if !valid {
-		global.Logger.Errorf("app.BindAndValid errs: %v", errs)
+		global.Logger.Errorf(context.Background(), "app.BindAndValid errs: %v", errs)
 		response.ToErrorResponse(errcode.InvalidParams.WithDetails(errs.Errors()...))
 		return
 	}
 
 	svc := service.New(c.Request.Context())
 	if err := svc.CheckAuth(&param); err != nil {
-		global.Logger.Errorf("svc.CheckAuth err: %v", err)
+		global.Logger.Errorf(context.Background(), "svc.CheckAuth err: %v", err)
 		response.ToErrorResponse(errcode.UnauthorizedAuthNotExist)
 		return
 	}
 
 	token, err := app.GenerateToken(param.AppKey, param.AppSecret)
 	if err != nil {
-		global.Logger.Errorf("app.GenerateToken err: %v", err)
+		global.Logger.Errorf(context.Background(), "app.GenerateToken err: %v", err)
 		response.ToErrorResponse(errcode.UnauthorizedTokenGenerate)
 		return
 	}

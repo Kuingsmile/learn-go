@@ -1,14 +1,18 @@
 package main
 
 import (
+	"context"
 	"httpclient/global"
 	"httpclient/internal/model"
 	"httpclient/internal/routers"
 	"httpclient/pkg/logger"
 	"httpclient/pkg/setting"
+	"httpclient/pkg/tracer"
 	"log"
 	"net/http"
 	"time"
+
+	"github.com/sirupsen/logrus"
 )
 
 func init() {
@@ -23,6 +27,10 @@ func init() {
 	err = setupDBEngine()
 	if err != nil {
 		log.Fatalf("init.setupDBEngine err: %v", err)
+	}
+	err = setupTracer()
+	if err != nil {
+		log.Fatalf("init.setupTracer err: %v", err)
 	}
 }
 
@@ -39,7 +47,7 @@ func main() {
 		WriteTimeout:   global.ServerSetting.WriteTimeout,
 		MaxHeaderBytes: 1 << 20,
 	}
-	global.Logger.Infof("%s: go HTTP server start", "main.main")
+	global.Logger.Infof(context.Background(), "%s: go HTTP server start", "main.main")
 	s.ListenAndServe()
 }
 
@@ -73,7 +81,7 @@ func setupSetting() error {
 
 func setupLogger() error {
 	var err error
-	global.Logger, err = logger.NewLogger(logger.LogLevelDebug,
+	global.Logger, err = logger.NewLogger(logrus.DebugLevel,
 		global.AppSetting.LogSavePath+"/"+global.AppSetting.LogFileName+global.AppSetting.LogFileExt)
 	if err != nil {
 		return err
@@ -87,5 +95,17 @@ func setupDBEngine() error {
 	if err != nil {
 		return err
 	}
+	return nil
+}
+
+func setupTracer() error {
+	jaegerTracer, _, err := tracer.NewJaegerTracer(
+		"blog-service",
+		"localhost:6831",
+	)
+	if err != nil {
+		return err
+	}
+	global.Tracer = jaegerTracer
 	return nil
 }

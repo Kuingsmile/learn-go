@@ -1,6 +1,7 @@
 package api
 
 import (
+	"context"
 	"httpclient/global"
 	"httpclient/internal/service"
 	"httpclient/pkg/app"
@@ -34,7 +35,7 @@ func (u Upload) UploadFile(c *gin.Context) {
 	svc := service.New(c.Request.Context())
 	fileInfo, err := svc.UploadFile(upload.FileType(fileType), file, fileHeader)
 	if err != nil {
-		global.Logger.Errorf("svc.UploadFile err: %v", err)
+		global.Logger.Errorf(context.Background(), "svc.UploadFile err: %v", err)
 		response.ToErrorResponse(errcode.ErrorUploadFileFail.WithDetails(err.Error()))
 		return
 	}
