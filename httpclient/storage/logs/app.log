@@ -221,3 +221,165 @@ time="2024-11-28T16:58:35+08:00" level=info msg="access log: method: GET, status
     "time": "2024-11-29 10:43:07",
     "trace_id": "1950eca4414051e1"
 }
+{
+    "level": "info",
+    "msg": "access log: method: GET, status_code: 404, begin_time: 1732870615, end_time: 1732870615",
+    "request": "",
+    "response": "",
+    "span_id": "78a6010d5b6b106a",
+    "time": "2024-11-29 16:56:55",
+    "trace_id": "78a6010d5b6b106a"
+}
+{
+    "level": "info",
+    "msg": "access log: method: GET, status_code: 200, begin_time: 1732870615, end_time: 1732870615",
+    "request": "",
+    "response": "{\"list\":[{\"id\":3,\"created_by\":\"msqqq\",\"modified_by\":\"\",\"created_at\":\"2024-11-27T10:44:12.7935263+08:00\",\"updated_at\":\"2024-11-27T10:44:12.7935263+08:00\",\"deleted_at\":null,\"name\":\"RRRR\",\"state\":1}],\"pager\":{\"page\":1,\"page_size\":10,\"total_rows\":1}}",
+    "span_id": "374ecd5c23b416fc",
+    "time": "2024-11-29 16:56:55",
+    "trace_id": "374ecd5c23b416fc"
+}
+{
+    "level": "info",
+    "msg": "access log: method: GET, status_code: 404, begin_time: 1732870798, end_time: 1732870798",
+    "request": "",
+    "response": "",
+    "span_id": "77631eca34fa3060",
+    "time": "2024-11-29 16:59:58",
+    "trace_id": "77631eca34fa3060"
+}
+{
+    "level": "info",
+    "msg": "access log: method: GET, status_code: 200, begin_time: 1732870798, end_time: 1732870798",
+    "request": "",
+    "response": "{\"list\":[],\"pager\":{\"page\":1,\"page_size\":10,\"total_rows\":0}}",
+    "span_id": "4becf67e30cb5de5",
+    "time": "2024-11-29 16:59:58",
+    "trace_id": "4becf67e30cb5de5"
+}
+{
+    "level": "info",
+    "msg": "access log: method: GET, status_code: 404, begin_time: 1732870811, end_time: 1732870811",
+    "request": "",
+    "response": "",
+    "span_id": "100c31a94381da05",
+    "time": "2024-11-29 17:00:11",
+    "trace_id": "100c31a94381da05"
+}
+{
+    "level": "info",
+    "msg": "access log: method: GET, status_code: 200, begin_time: 1732870811, end_time: 1732870811",
+    "request": "",
+    "response": "{\"list\":[{\"id\":3,\"created_by\":\"msqqq\",\"modified_by\":\"\",\"created_at\":\"2024-11-27T10:44:12.7935263+08:00\",\"updated_at\":\"2024-11-27T10:44:12.7935263+08:00\",\"deleted_at\":null,\"name\":\"RRRR\",\"state\":1}],\"pager\":{\"page\":1,\"page_size\":10,\"total_rows\":1}}",
+    "span_id": "183cc47b52637c1e",
+    "time": "2024-11-29 17:00:11",
+    "trace_id": "183cc47b52637c1e"
+}
+{
+    "level": "info",
+    "msg": "access log: method: GET, status_code: 404, begin_time: 1732870856, end_time: 1732870856",
+    "request": "",
+    "response": "",
+    "span_id": "39d77b400dcdbbe8",
+    "time": "2024-11-29 17:00:56",
+    "trace_id": "39d77b400dcdbbe8"
+}
+{
+    "level": "info",
+    "msg": "access log: method: GET, status_code: 200, begin_time: 1732870856, end_time: 1732870856",
+    "request": "",
+    "response": "{\"list\":[{\"id\":3,\"created_by\":\"msqqq\",\"modified_by\":\"\",\"created_at\":\"2024-11-27T10:44:12.7935263+08:00\",\"updated_at\":\"2024-11-27T10:44:12.7935263+08:00\",\"deleted_at\":null,\"name\":\"RRRR\",\"state\":1}],\"pager\":{\"page\":1,\"page_size\":10,\"total_rows\":1}}",
+    "span_id": "386f3719046d45de",
+    "time": "2024-11-29 17:00:56",
+    "trace_id": "386f3719046d45de"
+}
+{
+    "level": "info",
+    "msg": "access log: method: GET, status_code: 404, begin_time: 1732870883, end_time: 1732870883",
+    "request": "",
+    "response": "",
+    "span_id": "69fb8d5da901d914",
+    "time": "2024-11-29 17:01:23",
+    "trace_id": "69fb8d5da901d914"
+}
+{
+    "level": "info",
+    "msg": "access log: method: GET, status_code: 200, begin_time: 1732870883, end_time: 1732870883",
+    "request": "",
+    "response": "{\"list\":[{\"id\":3,\"created_by\":\"msqqq\",\"modified_by\":\"\",\"created_at\":\"2024-11-27T10:44:12.7935263+08:00\",\"updated_at\":\"2024-11-27T10:44:12.7935263+08:00\",\"deleted_at\":null,\"name\":\"RRRR\",\"state\":1}],\"pager\":{\"page\":1,\"page_size\":10,\"total_rows\":1}}",
+    "span_id": "286b16ec5748ee3b",
+    "time": "2024-11-29 17:01:23",
+    "trace_id": "286b16ec5748ee3b"
+}
+{
+    "level": "info",
+    "msg": "access log: method: GET, status_code: 404, begin_time: 1732870897, end_time: 1732870897",
+    "request": "",
+    "response": "",
+    "span_id": "090bd5b16a01c2f7",
+    "time": "2024-11-29 17:01:37",
+    "trace_id": "090bd5b16a01c2f7"
+}
+{
+    "level": "info",
+    "msg": "access log: method: GET, status_code: 200, begin_time: 1732870897, end_time: 1732870897",
+    "request": "",
+    "response": "{\"list\":[{\"id\":3,\"created_by\":\"msqqq\",\"modified_by\":\"\",\"created_at\":\"2024-11-27T10:44:12.7935263+08:00\",\"updated_at\":\"2024-11-27T10:44:12.7935263+08:00\",\"deleted_at\":null,\"name\":\"RRRR\",\"state\":1}],\"pager\":{\"page\":1,\"page_size\":10,\"total_rows\":1}}",
+    "span_id": "1121c6f8e1c71c30",
+    "time": "2024-11-29 17:01:37",
+    "trace_id": "1121c6f8e1c71c30"
+}
+{
+    "level": "info",
+    "msg": "access log: method: GET, status_code: 404, begin_time: 1732871019, end_time: 1732871019",
+    "request": "",
+    "response": "",
+    "span_id": "691d999d08e14c30",
+    "time": "2024-11-29 17:03:39",
+    "trace_id": "691d999d08e14c30"
+}
+{
+    "level": "info",
+    "msg": "access log: method: GET, status_code: 200, begin_time: 1732871019, end_time: 1732871019",
+    "request": "",
+    "response": "{\"list\":[{\"id\":3,\"created_by\":\"msqqq\",\"modified_by\":\"\",\"created_at\":\"2024-11-27T10:44:12.7935263+08:00\",\"updated_at\":\"2024-11-27T10:44:12.7935263+08:00\",\"deleted_at\":null,\"name\":\"RRRR\",\"state\":1}],\"pager\":{\"page\":1,\"page_size\":10,\"total_rows\":1}}",
+    "span_id": "5ca3fe92d0e220d2",
+    "time": "2024-11-29 17:03:39",
+    "trace_id": "5ca3fe92d0e220d2"
+}
+{
+    "level": "info",
+    "msg": "access log: method: GET, status_code: 404, begin_time: 1732871290, end_time: 1732871290",
+    "request": "",
+    "response": "",
+    "span_id": "65f9f7e144251edb",
+    "time": "2024-11-29 17:08:10",
+    "trace_id": "65f9f7e144251edb"
+}
+{
+    "level": "info",
+    "msg": "access log: method: GET, status_code: 200, begin_time: 1732871290, end_time: 1732871290",
+    "request": "",
+    "response": "{\"list\":[{\"id\":3,\"created_by\":\"msqqq\",\"modified_by\":\"\",\"created_at\":\"2024-11-27T10:44:12.7935263+08:00\",\"updated_at\":\"2024-11-27T10:44:12.7935263+08:00\",\"deleted_at\":null,\"name\":\"RRRR\",\"state\":1}],\"pager\":{\"page\":1,\"page_size\":10,\"total_rows\":1}}",
+    "span_id": "14e2fa8c9b81dd84",
+    "time": "2024-11-29 17:08:10",
+    "trace_id": "14e2fa8c9b81dd84"
+}
+{
+    "level": "info",
+    "msg": "access log: method: GET, status_code: 404, begin_time: 1732871699, end_time: 1732871699",
+    "request": "",
+    "response": "",
+    "span_id": "4c6c70f11316ae2d",
+    "time": "2024-11-29 17:14:59",
+    "trace_id": "4c6c70f11316ae2d"
+}
+{
+    "level": "info",
+    "msg": "access log: method: GET, status_code: 200, begin_time: 1732871699, end_time: 1732871699",
+    "request": "",
+    "response": "{\"list\":[{\"id\":3,\"created_by\":\"msqqq\",\"modified_by\":\"\",\"created_at\":\"2024-11-27T10:44:12.7935263+08:00\",\"updated_at\":\"2024-11-27T10:44:12.7935263+08:00\",\"deleted_at\":null,\"name\":\"RRRR\",\"state\":1}],\"pager\":{\"page\":1,\"page_size\":10,\"total_rows\":1}}",
+    "span_id": "39a2390b07dbd513",
+    "time": "2024-11-29 17:14:59",
+    "trace_id": "39a2390b07dbd513"
+}
