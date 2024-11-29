@@ -10,17 +10,18 @@ type ServerSettingS struct {
 }
 
 type AppSettingS struct {
-	DefaultPageSize      int64
-	MaxPageSize          int64
-	LogSavePath          string
-	LogFileName          string
-	LogFileExt           string
-	UploadSavePath       string
-	UploadServerUrl      string
-	UploadImageMaxSize   int
-	UploadExcelMaxSize   int
-	UploadTxtMaxSize     int
-	UploadImageAllowExts []string
+	DefaultPageSize       int64
+	MaxPageSize           int64
+	DefaultContextTimeout time.Duration
+	LogSavePath           string
+	LogFileName           string
+	LogFileExt            string
+	UploadSavePath        string
+	UploadServerUrl       string
+	UploadImageMaxSize    int
+	UploadExcelMaxSize    int
+	UploadTxtMaxSize      int
+	UploadImageAllowExts  []string
 }
 
 type DatabaseSettingS struct {
@@ -40,10 +41,26 @@ type JWTSettingS struct {
 	Expire time.Duration
 }
 
+var sections = make(map[string]interface{})
+
 func (s *Setting) ReadSection(k string, v interface{}) error {
 	err := s.vp.UnmarshalKey(k, v)
 	if err != nil {
 		return err
 	}
+	if _, ok := sections[k]; !ok {
+		sections[k] = v
+	}
+	return nil
+}
+
+func (s *Setting) ReloadAllSection() error {
+	for k, v := range sections {
+		err := s.ReadSection(k, v)
+		if err != nil {
+			return err
+		}
+	}
+
 	return nil
 }
