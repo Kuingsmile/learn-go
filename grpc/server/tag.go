@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"grpcproj/pkg/bapi"
+	"grpcproj/pkg/errcode"
 	"grpcproj/proto"
 )
 
@@ -20,7 +21,7 @@ func (t *TagServer) GetTagList(ctx context.Context, r *proto.GetTagListRequest) 
 	api := bapi.NewAPI("http://127.0.0.1:8000")
 	body, err := api.GetTagList(r.GetName())
 	if err != nil {
-		return nil, err
+		return nil, errcode.TogRPCError(errcode.ErrorGetTagListFail)
 	}
 	tagList := proto.GetTagListResponse{}
 	fmt.Println(string(body))

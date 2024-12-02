@@ -1,12 +1,17 @@
 package errcode
 
 import (
+	"grpcproj/proto"
+
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
 )
 
 func TogRPCError(e *Error) error {
-	s := status.New(TogRPCCode(e.Code()), e.Msg())
+	s, _ := status.New(TogRPCCode(e.Code()), e.Msg()).WithDetails(&proto.Error{
+		Code:    int32(e.Code()),
+		Message: e.Msg(),
+	})
 	return s.Err()
 }
 
@@ -34,4 +39,21 @@ func TogRPCCode(code int) codes.Code {
 	}
 
 	return statusCode
+}
+
+type Status struct {
+	*status.Status
+}
+
+func FromError(err error) *Status {
+	s, _ := status.FromError(err)
+	return &Status{s}
+}
+
+func ToRPCStatus(code int, msg string) *Status {
+	s, _ := status.New(TogRPCCode(code), msg).WithDetails(&proto.Error{
+		Code:    int32(code),
+		Message: msg,
+	})
+	return &Status{s}
 }
